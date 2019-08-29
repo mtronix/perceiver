@@ -1,0 +1,26 @@
+{
+  "name": "perceiver",
+  "version": "1.0.0",
+  "description": "Lightweight implementation of the observer pattern",
+  "main": "lib/main.ts",
+  "scripts": {
+    "start": "NODE_ENV=development rollup -c -w",
+    "build": "NODE_ENV=production rollup -c",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mtronix/perceiver.git"
+  },
+  "author": "Michał Jamrożek",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mtronix/perceiver/issues"
+  },
+  "homepage": "https://github.com/mtronix/perceiver#readme",
+  "devDependencies": {
+    "rollup": "1.16.7",
+    "rollup-plugin-typescript2": "0.21.2",
+    "typescript": "3.5.3"
+  }
+}
