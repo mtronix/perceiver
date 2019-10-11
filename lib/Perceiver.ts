@@ -1,7 +1,7 @@
-import { Listener } from './Listener';
 import { Perceivable } from './Perceivable';
 
-export const Perceiver = function<ListenerFn extends Listener>(): Perceivable<ListenerFn> {
+export const Perceiver = function<ListenerArgs extends any[] = any[]>(): Perceivable<ListenerArgs> {
+  type ListenerFn = (...args: ListenerArgs) => void;
   let listeners: ListenerFn[] = [];
 
   return {
@@ -28,7 +28,7 @@ export const Perceiver = function<ListenerFn extends Listener>(): Perceivable<Li
     },
 
     // Notify all listeners
-    notify(...args: any) {
+    notify(...args: ListenerArgs) {
       for (let i = 0, length = listeners.length; i < length; i++) {
         listeners[i](...args);
       }

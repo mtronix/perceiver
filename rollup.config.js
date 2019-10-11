@@ -10,17 +10,19 @@ const config = [
         name: 'perceiver',
         file: 'build/perceiver.umd.js',
         format: 'umd',
+        sourcemap: true,
       },
       {
         file: 'build/perceiver.cjs.js',
         format: 'cjs',
+        sourcemap: true,
       },
       {
         file: 'build/perceiver.esm.js',
         format: 'es',
+        sourcemap: true,
       },
     ],
-    sourceMap: true,
     plugins: [
       typescript(),
     ],

@@ -1,15 +1,15 @@
 {
   "name": "perceiver",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Lightweight implementation of the observer pattern",
   "main": "lib/main.ts",
   "browser": "build/perceiver.umd.js",
   "module": "build/perceiver.esm.js",
-  "types": "index.d.ts",
+  "types": "build/main.d.ts",
   "scripts": {
     "start": "NODE_ENV=development rollup -c -w",
     "build": "NODE_ENV=production rollup -c",
-    "prepublish": "npm run build",
+    "prepublish": "shx rm -rf build && npm run build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -25,6 +25,7 @@
   "devDependencies": {
     "rollup": "1.23.1",
     "rollup-plugin-typescript2": "0.24.3",
+    "shx": "0.3.2",
     "typescript": "3.6.4"
   }
 }

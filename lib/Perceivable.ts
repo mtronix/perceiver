@@ -1,13 +1,11 @@
-import { Listener } from './Listener';
-
-export interface Perceivable<ListenerFn extends Listener> {
+export interface Perceivable<ListenerArgs extends any[] = any[]> {
   // Add listener to the subscribers list
   // and return function which unsubscribes this listener
-  subscribe(listener: ListenerFn): Function;
+  subscribe(listener: (...args: ListenerArgs) => void): () => void;
 
   // Remove listener from subscriptions list
-  unsubscribe(listener: ListenerFn): void;
+  unsubscribe(listener: (...args: ListenerArgs) => void): void;
 
   // Notify all listeners
-  notify(...args: any): this;
+  notify(...args: ListenerArgs): void;
 }

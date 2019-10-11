@@ -1,0 +1,10 @@
+node_modules/
+.idea/
+.vscode/
+.rpt2_cache/
+
+.editorconfig
+rollup.config.js
+*.log
+.DS_Store
+Thumbs.db
